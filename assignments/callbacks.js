@@ -43,22 +43,35 @@ last(items, function (last) {
   console.log(last)
 });
 
-// function sumNums(x, y, cb) {
-//   // sumNums adds two numbers (x, y) and passes the result to the callback.
-//   return cb(arr[x + y]);
-// }
-// sumNums(items, function(adds) {
-//     console.log(adds)
-//   });
+function sumNums(x, y, cb) {
+  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
+}
 
-// function multiplyNums(x, y, cb) {
-//   // multiplyNums multiplies two numbers and passes the result to the callback.
-// }
+sumNums(5, 10, function (cb) {
+  console.log(cb)
+});
 
-// function contains(item, list, cb) {
-//   // contains checks if an item is present inside of the given array/list.
-//   // Pass true to the callback if it is, otherwise pass false.
-// }
+function multiplyNums(x, y, cb) {
+  // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
+}
+
+multiplyNums(5, 10, function (cb) {
+  console.log(cb)
+});
+
+function contains(item, list, cb) {
+  // contains checks if an item is present inside of the given array/list.
+  // Pass true to the callback if it is, otherwise pass false.
+  cb(list.includes(item))
+}
+
+// Function invocation
+
+contains('Pencil', items, function (isThere) {
+  console.log(isThere);
+});
 
 
 /* STRETCH PROBLEM */
